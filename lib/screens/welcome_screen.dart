@@ -43,7 +43,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 borderRadius: BorderRadius.circular(30.0),
                 child: MaterialButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: context.))
+                    // Go to Login
                   },
                   minWidth: 200.0,
                   height: 50.0,

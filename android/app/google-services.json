@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "306871551856",
+    "firebase_url": "https://assemble-bce1d.firebaseio.com",
+    "project_id": "assemble-bce1d",
+    "storage_bucket": "assemble-bce1d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306871551856:android:7f0601f0494d16d02cf1b5",
+        "android_client_info": {
+          "package_name": "com.avinashk.assemble"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306871551856-1pr3h3n0ooso2gsimqo3ve8psrha2g5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_QpTK4romZDOd0gEwk_lcgMnTMYyEdPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306871551856-1pr3h3n0ooso2gsimqo3ve8psrha2g5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

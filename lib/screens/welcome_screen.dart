@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:assemble/components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -9,37 +11,37 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin{
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  AnimationController controller;
+  Animation animation;
 
-AnimationController controller;
-Animation animation;
-
-@override
+  @override
   void initState() {
     // TODO: implement initState
     super.initState();
 
-controller=AnimationController(duration: Duration(seconds: 1),
-vsync: this,
-);
+    controller = AnimationController(
+      duration: Duration(seconds: 1),
+      vsync: this,
+    );
 
-animation=ColorTween(begin: Colors.blueGrey,end: Colors.white).animate(controller);
+    animation = ColorTween(begin: Colors.blueGrey, end: Colors.white)
+        .animate(controller);
 
-controller.forward();
+    controller.forward();
 
-controller.addListener(() {
-  setState(() {
-    print(animation.value);
-  });
-  
-});
-
+    controller.addListener(() {
+      setState(() {
+        print(animation.value);
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: animation.value, 
+      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -52,11 +54,10 @@ controller.addListener(() {
                   tag: 'logo',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height:60.0,
+                    height: 60.0,
                   ),
                 ),
-                Text(
-                  'Assemble',
+                Text('Assemble',
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
@@ -67,45 +68,25 @@ controller.addListener(() {
             SizedBox(
               height: 48.0,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                elevation: 5.0,
-                color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 50.0,
-                  child: Text(
-                    'Log in',
-                  ),
-                ),
-              ),
+            RoundedButton(
+              color: Colors.lightBlueAccent,
+              title: 'Log In',
+              onPressed: () {
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
-              child: Material(
-                color: Colors.blueAccent,
-                borderRadius: BorderRadius.circular(30.0),
-                elevation: 5.0,
-                child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
-                  minWidth: 200.0,
-                  height: 50.0,
-                  child: Text(
-                    'Register',
-                  ),
-                ),
-              ),
-            )
+            RoundedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, RegistrationScreen.id);
+              },
+              title: 'Register',
+              color: Colors.blueAccent,
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:assemble/components/rounded_button.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -18,7 +17,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     controller = AnimationController(
